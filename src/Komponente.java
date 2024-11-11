@@ -1,14 +1,16 @@
 import java.util.UUID;
 public class Komponente {
-    private String comUUID;
-    private String ipAdresse;
+    private String comUUID; // eindeutige Identifikation der Komponenente
+    private String ipAdresse; // IP der Komponente
     private int port;
+    private boolean isStern;
 
-    // Constructor to initialize a new component with IP and port
+    // Konstruktor um neue Komponente zu initialisieren
     public Komponente(String comUUID, String ipAdresse, int port) {
-        this.comUUID = comUUID;
+        this.comUUID = generateComUuid();
         this.ipAdresse = ipAdresse;
         this.port = port;
+        this.isStern=true;
     }
 
     // Generate a unique 4-digit identifier (COM-UUID)
@@ -31,4 +33,16 @@ public class Komponente {
     public int getPort() {
         return port;
     }
+
+    public boolean isStern() {
+        return isStern;
+    }
+
+    public void setStar(){
+        isStern=true;
+    }
+
+   // sag Hallo
+   // frag nach Stern
+   // werde Stern
 }
