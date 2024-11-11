@@ -6,22 +6,23 @@ public class Komponente {
     private boolean isStern;
 
     // Konstruktor um neue Komponente zu initialisieren
-    public Komponente(String comUUID, String ipAdresse, int port) {
+    public Komponente(int port) {
         this.comUUID = generateComUuid();
         this.ipAdresse = ipAdresse;
         this.port = port;
         this.isStern=true;
     }
 
-    // Generate a unique 4-digit identifier (COM-UUID)
+    /**
+     * generiert 4 Stellige ID Nummer für Komponente
+     * @return liefert ID Nummer zurück
+     */
     private String generateComUuid() {
         int uniqueId = 1000 + (int) (Math.random() * 9000); // Ensure 4-digit
         return Integer.toString(uniqueId);
     }
 
-    // Getters for the component attributes
-
-
+    // Getters für jeweilige Attribute
     public String getComUUID() {
         return comUUID;
     }
@@ -38,10 +39,10 @@ public class Komponente {
         return isStern;
     }
 
-    public void setStar(){
-        isStern=true;
+    public void setStar(boolean status){
+        isStern=status;
     }
-
+ //TODO:
    // sag Hallo
    // frag nach Stern
    // werde Stern

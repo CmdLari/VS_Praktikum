@@ -36,7 +36,7 @@ public class Kernsystem {
 
     private void registriereSolKomponente() {
         // Register SOL itself in the star
-        Komponente sol = new Komponente(solUUID, ipAdresse, starPort);
+        Komponente sol = new Komponente(starPort);
         komponenten.put(solUUID, sol);
     }
 
